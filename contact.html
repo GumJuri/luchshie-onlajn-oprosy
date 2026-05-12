@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #e8f0fe;
+            padding: 20px 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        main h2 {
+            font-size: 1.8em;
+            margin-top: 0;
+        }
+        main form {
+            margin-top: 20px;
+        }
+        main form label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        main form input, 
+        main form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        main form textarea {
+            height: 150px;
+            resize: none;
+        }
+        main form button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #0078d7;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        main form button:hover {
+            background-color: #005bb5;
+        }
+        footer {
+            text-align: center;
+            padding: 15px 10px;
+            background-color: #e8f0fe;
+            margin-top: 20px;
+        }
+        footer p {
+            margin: 0;
+       }
+        header nav {
+            margin-top: 10px;
+        }
+        header nav a {
+            color: #0078d7;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        header nav a:hover {
+            text-decoration: underline;
+        }
+        }
+    </style>
+</head>
+<body>
+    <header>
+
+        <nav>
+            <a href="/">Главная</a>
+            <a href="/contact.html">Контакты</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Свяжитесь со мной</h2>
+        <p>Если у вас есть вопросы или предложения, заполните форму ниже. Я свяжусь с вами в ближайшее время.</p>
+        <form action="#" method="post">
+            <label for="name">Ваше имя</label>
+            <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
+            
+            <label for="email">Ваш email</label>
+            <input type="email" id="email" name="email" placeholder="Введите ваш email" required>
+            
+            <label for="message">Сообщение</label>
+            <textarea id="message" name="message" placeholder="Введите ваше сообщение" required></textarea>
+            
+            <button type="submit">Отправить</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2026 Мой блог. Все права защищены.</p>
+    </footer>
+</body>
+</html>
