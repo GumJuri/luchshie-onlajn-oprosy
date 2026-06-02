@@ -907,6 +907,109 @@ text-decoration: underline;
 text-underline-offset: 2px;
 font-weight: 600;
 }
+.survey-top-rating {
+display: grid;
+gap: 14px;
+}
+.survey-top-rating__title {
+font-size: clamp(1.65rem, 3vw, 2.15rem);
+line-height: 1.12;
+font-weight: 800;
+color: var(--color-text);
+margin: 0 0 4px;
+}
+.survey-top-rating__subtitle {
+font-size: .96rem;
+color: var(--color-muted);
+line-height: 1.5;
+margin: 0 0 6px;
+}
+.survey-top-card {
+display: grid;
+grid-template-columns: 54px 1fr auto;
+gap: 14px;
+align-items: center;
+padding: 14px;
+border: 1px solid rgba(17,24,39,.10);
+border-radius: 18px;
+background: linear-gradient(135deg, #fff 0%, #ecfdf3 100%);
+box-shadow: 0 10px 24px rgba(15,23,42,.07);
+}
+.survey-top-card__logo {
+display: grid;
+place-items: center;
+width: 54px;
+height: 54px;
+border-radius: 16px;
+color: #fff;
+font-weight: 900;
+letter-spacing: .02em;
+background: linear-gradient(135deg, var(--color-brand), #0f5132);
+box-shadow: 0 10px 18px rgba(20,164,84,.22);
+}
+.survey-top-card__rank {
+display: inline-flex;
+width: max-content;
+margin-bottom: 4px;
+padding: 3px 9px;
+border-radius: 999px;
+background: rgba(20,164,84,.10);
+color: var(--color-brand);
+font-weight: 800;
+font-size: .78rem;
+}
+.survey-top-card h3 {
+font-size: 1.04rem;
+line-height: 1.2;
+margin: 0 0 6px;
+}
+.survey-top-card ul {
+display: grid;
+gap: 3px;
+margin: 0 0 7px;
+padding-left: 18px;
+color: var(--color-muted);
+font-size: .86rem;
+}
+.survey-top-card__rating {
+font-size: .88rem;
+font-weight: 800;
+color: #f59e0b;
+white-space: nowrap;
+}
+.survey-top-card__cta {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+min-height: 42px;
+padding: 0 16px;
+border-radius: 999px;
+background: var(--color-brand);
+color: #fff;
+font-weight: 800;
+white-space: nowrap;
+box-shadow: 0 12px 28px rgba(20,164,84,.24);
+transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+.survey-top-card__cta:hover {
+transform: translateY(-1px);
+background: var(--color-brand-hover);
+box-shadow: 0 16px 34px rgba(20,164,84,.30);
+}
+@media (max-width: 760px) {
+.survey-top-card {
+grid-template-columns: 46px 1fr;
+}
+.survey-top-card__logo {
+width: 46px;
+height: 46px;
+border-radius: 14px;
+}
+.survey-top-card__cta {
+grid-column: 1 / -1;
+width: 100%;
+}
+}
 .block-hero-form-banner-glass--overlay-dark .block-hero-form-banner-glass__overlay {
 background: rgba(0, 0, 0, 0.55);
 }
@@ -3525,7 +3628,7 @@ ym(109348050, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true
  </nav>
  <div class="block-header-nav__actions">
  
- <a class="dl-btn dl-btn-primary block-header-nav__cta" href="#contact-form">Записаться</a>
+ <a class="dl-btn dl-btn-primary block-header-nav__cta" href="#home">Выбрать сайт</a>
  <button class="block-header-nav__burger burger" type="button" aria-label="Меню" aria-expanded="false">
  <span class="block-header-nav__burger-line" aria-hidden="true"></span><span class="block-header-nav__burger-line" aria-hidden="true"></span><span class="block-header-nav__burger-line" aria-hidden="true"></span>
  </button>
@@ -3545,35 +3648,54 @@ ym(109348050, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true
  <h1 class="block-hero-form-banner-glass__title">Лучшие сайты платных опросов в 2026 году</h1>
  <p class="block-hero-form-banner-glass__subtitle">Ежедневно собираем актуальные предложения со всего рунета: онлайн опросы за деньги, фокус-группы, холл-тесты, интервью и домашние визиты. Средний заработок от 400 до 6 000 рублей за исследование.</p>
  </div>
- <form class="block-hero-form-banner-glass__form" action="https://кнопка-бабло.рф/api/v1/public/forms/5af7e336-fb91-4809-8f03-065ab097a656" method="post">
- <div class="block-hero-form-banner-glass__form-title">Узнать стоимость</div>
- <div class="block-hero-form-banner-glass__fields">
- 
- 
- <label class="block-hero-form-banner-glass__field block-hero-form-banner-glass__field--">
- <span>Ваше имя <span class="dl-required" aria-hidden="true">*</span></span>
- <input type="text" name="name" placeholder="Иван Петров" required="" aria-required="true" />
- </label>
- 
- 
- 
- <label class="block-hero-form-banner-glass__field block-hero-form-banner-glass__field--">
- <span>Email <span class="dl-required" aria-hidden="true">*</span></span>
- <input type="email" name="email" placeholder="" required="" aria-required="true" />
- </label>
- 
- 
- 
- <label class="block-hero-form-banner-glass__field block-hero-form-banner-glass__field--">
- <span>Город</span>
- <input type="text" name="city" placeholder="Москва" />
- </label>
- 
- 
+ <div class="block-hero-form-banner-glass__form survey-top-rating" aria-label="Топ сайтов платных опросов">
+ <div>
+ <div class="survey-top-rating__title">Топ сайтов-опросников</div>
+ <p class="survey-top-rating__subtitle">Выберите площадку и переходите сразу к регистрации — без лишних форм и промежуточных шагов.</p>
  </div>
- <button type="submit" class="dl-btn dl-btn-primary block-hero-form-banner-glass__submit">Получить доступ</button>
- <div class="block-hero-form-banner-glass__privacy">Регистрация бесплатная. Никаких скрытых платежей.</div>
- </form>
+ <article class="survey-top-card">
+ <div class="survey-top-card__logo" aria-hidden="true">A</div>
+ <div>
+ <span class="survey-top-card__rank">Топ-1</span>
+ <h3>Анкетка</h3>
+ <ul>
+ <li>Вывод вознаграждения на карту</li>
+ <li>Регулярные онлайн-опросы по профилю</li>
+ <li>Простой личный кабинет</li>
+ </ul>
+ <div class="survey-top-card__rating" aria-label="Оценка 5 из 5">★★★★★ 5.0</div>
+ </div>
+ <a class="survey-top-card__cta" href="https://www.anketka.com/ru/" target="_blank" rel="nofollow sponsored noopener">Перейти на сайт</a>
+ </article>
+ <article class="survey-top-card">
+ <div class="survey-top-card__logo" aria-hidden="true">ЭМ</div>
+ <div>
+ <span class="survey-top-card__rank">Топ-2</span>
+ <h3>Экспертное мнение</h3>
+ <ul>
+ <li>Бонусы и баллы за активность</li>
+ <li>Опросы через почту и Telegram</li>
+ <li>Подходит для регулярной подработки</li>
+ </ul>
+ <div class="survey-top-card__rating" aria-label="Оценка 4.9 из 5">★★★★★ 4.9</div>
+ </div>
+ <a class="survey-top-card__cta" href="https://expertnoemnenie.ru/" target="_blank" rel="nofollow sponsored noopener">Перейти на сайт</a>
+ </article>
+ <article class="survey-top-card">
+ <div class="survey-top-card__logo" aria-hidden="true">S</div>
+ <div>
+ <span class="survey-top-card__rank">Топ-3</span>
+ <h3>Surveoo</h3>
+ <ul>
+ <li>Международные платные опросы</li>
+ <li>Вознаграждения за заполнение анкет</li>
+ <li>Удобно проходить со смартфона</li>
+ </ul>
+ <div class="survey-top-card__rating" aria-label="Оценка 4.8 из 5">★★★★☆ 4.8</div>
+ </div>
+ <a class="survey-top-card__cta" href="https://www.surveoo.com/ru/" target="_blank" rel="nofollow sponsored noopener">Перейти на сайт</a>
+ </article>
+ </div>
  </div>
  </div>
 </section>
